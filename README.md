@@ -38,7 +38,7 @@ To deploy this API, you will need an AWS account. Follow these steps:
 You can test the API using tools like `curl` or Postman. Example `curl` request:
 ```bash
 curl -X GET https://ol7vg2h26i.execute-api.us-east-1.amazonaws.com/Dev
-
+```
 
 ## Caching Strategy
 API responses are cached for 5 minutes to reduce load on the web server and improve response times.
