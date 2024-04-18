@@ -1,10 +1,14 @@
 import json
 import requests
+import os
 
 def lambda_handler(event, context):
+    womens_leggings_url = os.environ.get('WOMENS_LEGGINGS_URL')
+    accessories_url = os.environ.get('ACCESSORIES_URL')
+    
     urls = [
-        "https://shop.lululemon.com/c/womens-leggings/_/N-8r6?format=json",
-        "https://shop.lululemon.com/c/accessories/_/N-1z0xcmkZ1z0xl44Z8ok?format=json"
+        womens_leggings_url,
+        accessories_url
     ]
     products = []
     for url in urls:

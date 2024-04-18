@@ -41,7 +41,23 @@ curl -X GET https://ol7vg2h26i.execute-api.us-east-1.amazonaws.com/Dev
 ```
 
 ## Caching Strategy
-API responses are cached for 5 minutes to reduce load on the web server and improve response times.
+
+!
+To implement caching mechanisms for your API to avoid hitting the Lululemon API excessively, you can use several approaches, especially if you're using AWS services:
+
+### API Gateway Caching:
+
+In API Gateway, you can enable caching on your stage to cache responses from your endpoints. This means that repeated requests with the same parameters will return a cached response rather than invoking the Lambda function again. You can set the TTL (time to live) for the cache to control how long the responses are stored.
+
+### Lambda Function Caching with Elasticache or DAX:
+
+Inside your Lambda function, before making a call to the Lululemon API, you can check if the response to the request is already stored in an AWS ElastiCache Redis cache or DynamoDB Accelerator (DAX) if you are using DynamoDB. This requires setting up ElastiCache or DAX and modifying your Lambda function to query the cache before making the external API call.
+
+### Custom Caching Mechanism:
+
+You can implement a custom caching mechanism using DynamoDB or S3. Store the response from the Lululemon API in a DynamoDB table or an S3 object with a TTL attribute. Before calling the external API, check if the data you need is available and not expired in your cache.
+
+### Using Cloud Front
 
 ## Error Handling
 The API returns a `500 Internal Server Error` if any errors occur during the scraping process. These errors are logged to CloudWatch for further investigation.
