@@ -28,17 +28,17 @@ example_accessories_page = {
     ]
 }
 
-@pytest.fixture()
-def context():
-    """Create a mock context object to pass to the lambda_handler."""
-    class TestContext:
-        def __init__(self):
-            self.function_name = 'test_lambda_function'
-            self.memory_limit_in_mb = 128
-            self.invoked_function_arn = 'arn:aws:lambda:us-east-1:123456789012:function:test_lambda_function'
-            self.aws_request_id = 'unique-test-id'
+# @pytest.fixture()
+# def context():
+#     """Create a mock context object to pass to the lambda_handler."""
+#     class TestContext:
+#         def __init__(self):
+#             self.function_name = 'test_lambda_function'
+#             self.memory_limit_in_mb = 128
+#             self.invoked_function_arn = 'arn:aws:lambda:us-east-1:123456789012:function:test_lambda_function'
+#             self.aws_request_id = 'unique-test-id'
 
-    return TestContext()
+#     return TestContext()
 
 
 @requests_mock.Mocker()
