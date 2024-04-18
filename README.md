@@ -50,4 +50,4 @@ The API returns a `500 Internal Server Error` if any errors occur during the scr
 - The API endpoint is public but can be secured using API Gateway resource policies, AWS IAM roles and policies, or Lambda authorizers depending on requirements.
 
 ## Contact Information
-For any queries or issues, please reach out to [Your Name] at [Your Email].
+For any queries or issues, please reach out to ar.ibrahimy@gmail.com.
