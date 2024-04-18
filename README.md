@@ -47,7 +47,7 @@ API responses are cached for 5 minutes to reduce load on the web server and impr
 The API returns a `500 Internal Server Error` if any errors occur during the scraping process. These errors are logged to CloudWatch for further investigation.
 
 ## Security
-- The API endpoint is public but can be secured using API Gateway resource policies, AWS IAM roles and policies, or Lambda authorizers depending on requirements.
+- The API endpoint is public but can be secured using API Gateway resource policies, API Key, AWS IAM roles and policies, or Lambda authorizers depending on requirements.
 
 ## Contact Information
 For any queries or issues, please reach out to ar.ibrahimy@gmail.com.
